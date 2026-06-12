@@ -52,7 +52,7 @@ function App() {
 
       <Routes>
 
-        <Route path="/" element={<HomePage />} />
+        <Route path="/ltdoptics" element={<HomePage />} />
 
         <Route path="/services" element={<Services />} />
 
