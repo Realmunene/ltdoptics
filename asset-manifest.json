@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/ltdoptics/static/css/main.471abd9a.css",
+    "main.js": "/ltdoptics/static/js/main.8df4cce2.js",
+    "static/js/453.9b69204f.chunk.js": "/ltdoptics/static/js/453.9b69204f.chunk.js",
+    "static/media/slide4.jpg": "/ltdoptics/static/media/slide4.e95bba03289b32bcef1c.jpg",
+    "static/media/premium.jpg": "/ltdoptics/static/media/premium.a9b49c5c2bb0a108d0f7.jpg",
+    "static/media/budgeted glass.jpg": "/ltdoptics/static/media/budgeted glass.5d5cb73ee26fa782f540.jpg",
+    "static/media/kidsglasses.jpg": "/ltdoptics/static/media/kidsglasses.0d7be332ba00489ea417.jpg",
+    "static/media/pexels-cottonbro-6616123.jpg": "/ltdoptics/static/media/pexels-cottonbro-6616123.62618505f69d617d8424.jpg",
+    "static/media/slide5.jpg": "/ltdoptics/static/media/slide5.cb18e128b54760345ddc.jpg",
+    "static/media/female glasses.jpg": "/ltdoptics/static/media/female glasses.0e4069923babc5300909.jpg",
+    "static/media/blueblockoptician.mp4": "/ltdoptics/static/media/blueblockoptician.5adf908765b4e565230b.mp4",
+    "static/media/blue block logo.png": "/ltdoptics/static/media/blue block logo.264dcd114f00efa400aa.png",
+    "static/media/fa-solid-900.woff2": "/ltdoptics/static/media/fa-solid-900.ce9a3fa740bd60b4ac3b.woff2",
+    "static/media/fa-brands-400.woff2": "/ltdoptics/static/media/fa-brands-400.f276979f97f1cf375d23.woff2",
+    "static/media/fa-regular-400.woff2": "/ltdoptics/static/media/fa-regular-400.cfbad32c79d9dda6af4a.woff2",
+    "static/media/slide2.jpg": "/ltdoptics/static/media/slide2.b858a05908943bb326e3.jpg",
+    "static/media/slide3.jpg": "/ltdoptics/static/media/slide3.ed933bb458541c1eb468.jpg",
+    "static/media/fa-v4compatibility.woff2": "/ltdoptics/static/media/fa-v4compatibility.296da06936a3373940c8.woff2",
+    "index.html": "/ltdoptics/index.html",
+    "main.471abd9a.css.map": "/ltdoptics/static/css/main.471abd9a.css.map",
+    "main.8df4cce2.js.map": "/ltdoptics/static/js/main.8df4cce2.js.map",
+    "453.9b69204f.chunk.js.map": "/ltdoptics/static/js/453.9b69204f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.471abd9a.css",
+    "static/js/main.8df4cce2.js"
+  ]
+}
