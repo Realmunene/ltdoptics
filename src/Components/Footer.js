@@ -16,7 +16,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/ltdoptics" className="flex items-center">
             <img
               src={logo}
               alt="Blue Block Logo"

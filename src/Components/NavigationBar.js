@@ -44,7 +44,7 @@ const NavigationBar = () => {
         <div className="flex justify-between items-center py-4">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/ltdoptics" className="flex items-center">
             <img
               src={logo}
               alt="Blue Block Logo"
