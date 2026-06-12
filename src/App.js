@@ -23,8 +23,6 @@ import DesignedFrames from "./Components/Pages/Designedfram";
 import Portfolio from "./Components/Pages/Portfolio";
 import About from "./Components/Pages/Aboutus";
 import Blog from "./Components/Pages/Blog";
-import appointment from "./Components/Pages/Bookappointment";
-import lensrenew from "./Components/Pages/LensRenewal";
 import Bookappointment from "./Components/Pages/Bookappointment";
 import LensRenewal from "./Components/Pages/LensRenewal";
 
