@@ -25,6 +25,7 @@ import About from "./Components/Pages/Aboutus";
 import Blog from "./Components/Pages/Blog";
 import Bookappointment from "./Components/Pages/Bookappointment";
 import LensRenewal from "./Components/Pages/LensRenewal";
+import Ourservices from "./Components/Ourservices";
 
 
 // Homepage layout
@@ -33,6 +34,7 @@ function HomePage() {
     <>
       <Home />
       <CategoryCarousel />
+      <Ourservices />
       <HomeVision />
       <Testimonials />
       <ContactUs />

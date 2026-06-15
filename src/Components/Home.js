@@ -147,9 +147,9 @@ _ I would like to confirm my appointment. _
 
 
           {/* Hero Left Side */}
-          <div className="w-full lg:w-1/2 text-white">
+          <div className="w-full lg:w-1/2 text-grey">
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+            <h1 className="text-black text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
               See the World <br />
               With Perfect
               <span className="text-sky-400">
@@ -158,7 +158,7 @@ _ I would like to confirm my appointment. _
             </h1>
 
 
-            <p className="text-lg text-gray-100 mb-6 max-w-xl">
+            <p className="text-lg text-gray-300 mb-6 max-w-xl">
               Blue Block Optics provides professional eye examinations,
               prescription lenses, stylish frames, reading glasses,
               and personalized vision care designed around your lifestyle.
@@ -173,7 +173,7 @@ _ I would like to confirm my appointment. _
                     {/* Booking Card */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
 
-            <div className="w-full lg:max-w-md bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-xl">
+            <div className="w-full lg:max-w-md bg-white/95 backdrop-blur-md p-6 border border-sky-400 rounded-2xl shadow-xl">
 
               <h2 className="text-xl font-semibold mb-5 text-gray-800">
                 {showConfirmation
