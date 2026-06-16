@@ -116,30 +116,12 @@ const NavigationBar = () => {
 
             </div>
 
-
-            <Link
-              to="/portfolio"
-              className="text-gray-700 hover:text-sky-600 transition"
-            >
-              Portfolio
-            </Link>
-
-
             <Link
               to="/about"
               className="text-gray-700 hover:text-sky-600 transition"
             >
               About Us
             </Link>
-
-
-            <Link
-              to="/blog"
-              className="text-gray-700 hover:text-sky-600 transition"
-            >
-              Blog
-            </Link>
-
           </div>
 
 
@@ -230,31 +212,12 @@ const NavigationBar = () => {
 
             </div>
 
-
-            <Link
-              to="/portfolio"
-              onClick={closeMobileMenu}
-              className="block py-3 text-gray-700 hover:text-sky-600"
-            >
-              Portfolio
-            </Link>
-
-
             <Link
               to="/about"
               onClick={closeMobileMenu}
               className="block py-3 text-gray-700 hover:text-sky-600"
             >
               About Us
-            </Link>
-
-
-            <Link
-              to="/blog"
-              onClick={closeMobileMenu}
-              className="block py-3 text-gray-700 hover:text-sky-600"
-            >
-              Blog
             </Link>
 
 

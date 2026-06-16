@@ -72,46 +72,55 @@ export default function CategoryCarousel() {
 
   return (
     <div className="w-full bg-gray-100 py-6 px-4">
-      <div className="relative flex items-center">
-        
-        {/* Left Arrow */}
-        <button
-          onClick={handlePrev}
-          className="absolute left-0 z-20 flex h-16 w-12 items-center justify-center bg-gray-300 hover:bg-gray-400 transition rounded-r-md"
+  <div className="relative flex items-center">
+
+    {/* Left Arrow */}
+    <button
+      onClick={handlePrev}
+      className="absolute left-0 z-20 flex 
+      h-10 w-8 sm:h-12 sm:w-10 lg:h-16 lg:w-12
+      items-center justify-center 
+      bg-gray-300 hover:bg-gray-400 transition 
+      rounded-r-md shadow-sm"
+    >
+      <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5 lg:h-7 lg:w-7" />
+    </button>
+
+    {/* Categories */}
+    <div className="mx-10 sm:mx-12 lg:mx-14 flex w-full justify-between gap-3 sm:gap-4 overflow-hidden">
+      {displayedItems.map((item, index) => (
+        <div
+          key={`${item.name}-${index}`}
+          className="flex min-w-[100px] sm:min-w-[120px] lg:min-w-[140px] flex-col items-center"
         >
-          <ChevronLeft size={28} />
-        </button>
+          <div className="flex h-24 w-24 sm:h-28 sm:w-28 lg:h-36 lg:w-36 items-center justify-center rounded-full bg-white shadow-sm">
+            <img
+              src={item.image}
+              alt={item.name}
+              className="h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24 object-contain"
+            />
+          </div>
 
-        {/* Categories */}
-        <div className="mx-14 flex w-full justify-between gap-4 overflow-hidden">
-          {displayedItems.map((item, index) => (
-            <div
-              key={`${item.name}-${index}`}
-              className="flex min-w-[140px] flex-col items-center"
-            >
-              <div className="flex h-36 w-36 items-center justify-center rounded-full bg-white shadow-sm">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="h-24 w-24 object-contain"
-                />
-              </div>
-
-              <p className="mt-4 text-center font-semibold text-gray-900">
-                {item.name}
-              </p>
-            </div>
-          ))}
+          <p className="mt-3 sm:mt-4 text-center text-sm sm:text-base font-semibold text-gray-900">
+            {item.name}
+          </p>
         </div>
-
-        {/* Right Arrow */}
-        <button
-          onClick={handleNext}
-          className="absolute right-0 z-20 flex h-16 w-12 items-center justify-center bg-white border hover:bg-gray-100 transition rounded-l-md"
-        >
-          <ChevronRight size={28} />
-        </button>
-      </div>
+      ))}
     </div>
+
+    {/* Right Arrow */}
+    <button
+      onClick={handleNext}
+      className="absolute right-0 z-20 flex 
+      h-10 w-8 sm:h-12 sm:w-10 lg:h-16 lg:w-12
+      items-center justify-center 
+      bg-white border hover:bg-gray-100 transition 
+      rounded-l-md shadow-sm"
+    >
+      <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 lg:h-7 lg:w-7" />
+    </button>
+
+  </div>
+</div>
   );
 }

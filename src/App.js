@@ -20,9 +20,7 @@ import ReadingGlasses from "./Components/Pages/Readingg";
 import Sunglasses from "./Components/Pages/Sunglases";
 import EyewearAccessories from "./Components/Pages/Accessories";
 import DesignedFrames from "./Components/Pages/Designedfram";
-import Portfolio from "./Components/Pages/Portfolio";
 import About from "./Components/Pages/Aboutus";
-import Blog from "./Components/Pages/Blog";
 import Bookappointment from "./Components/Pages/Bookappointment";
 import LensRenewal from "./Components/Pages/LensRenewal";
 import Ourservices from "./Components/Ourservices";
@@ -79,18 +77,8 @@ function App() {
         />
 
         <Route
-          path="/portfolio"
-          element={<Portfolio />}
-        />
-
-        <Route
           path="/about"
           element={<About />}
-        />
-
-        <Route
-          path="/blog"
-          element={<Blog />}
         />
 
         <Route
