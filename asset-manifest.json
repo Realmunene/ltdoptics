@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ltdoptics/static/css/main.993ffe25.css",
-    "main.js": "/ltdoptics/static/js/main.a0ca7ab9.js",
+    "main.css": "/ltdoptics/static/css/main.87bf6f8f.css",
+    "main.js": "/ltdoptics/static/js/main.d5735f36.js",
     "static/js/453.9b69204f.chunk.js": "/ltdoptics/static/js/453.9b69204f.chunk.js",
     "static/media/slide4.jpg": "/ltdoptics/static/media/slide4.e95bba03289b32bcef1c.jpg",
     "static/media/premium.jpg": "/ltdoptics/static/media/premium.a9b49c5c2bb0a108d0f7.jpg",
@@ -27,12 +27,12 @@
     "static/media/slide3.jpg": "/ltdoptics/static/media/slide3.ed933bb458541c1eb468.jpg",
     "static/media/fa-v4compatibility.woff2": "/ltdoptics/static/media/fa-v4compatibility.296da06936a3373940c8.woff2",
     "index.html": "/ltdoptics/index.html",
-    "main.993ffe25.css.map": "/ltdoptics/static/css/main.993ffe25.css.map",
-    "main.a0ca7ab9.js.map": "/ltdoptics/static/js/main.a0ca7ab9.js.map",
+    "main.87bf6f8f.css.map": "/ltdoptics/static/css/main.87bf6f8f.css.map",
+    "main.d5735f36.js.map": "/ltdoptics/static/js/main.d5735f36.js.map",
     "453.9b69204f.chunk.js.map": "/ltdoptics/static/js/453.9b69204f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.993ffe25.css",
-    "static/js/main.a0ca7ab9.js"
+    "static/css/main.87bf6f8f.css",
+    "static/js/main.d5735f36.js"
   ]
 }
