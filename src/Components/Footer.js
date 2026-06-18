@@ -90,31 +90,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter */}
-        
-        <div className="border-t border-gray-800 pt-6 pb-6 px-4">
-  <div className="max-w-md mx-auto text-center">
-    <h4 className="text-lg font-semibold mb-2">
-      Subscribe to Our Newsletter
-    </h4>
-
-    <p className="text-gray-400 mb-4">
-      Get exclusive offers and updates
-    </p>
-
-    <div className="flex flex-col sm:flex-row gap-3 sm:gap-0 w-full">
-      <input
-        type="email"
-        placeholder="Your email address"
-        className="w-full flex-1 px-4 py-3 rounded-lg sm:rounded-l-lg sm:rounded-r-none focus:outline-none text-gray-800 min-w-0"
-      />
-
-      <button className="w-full sm:w-auto bg-sky-400 px-5 py-3 rounded-lg sm:rounded-r-lg sm:rounded-l-none hover:bg-sky-700 transition whitespace-nowrap">
-        Subscribe
-      </button>
-    </div>
-  </div>
-</div>
 
         {/* Copyright */}
         <div className="border-t border-gray-800 pt-6 text-center">

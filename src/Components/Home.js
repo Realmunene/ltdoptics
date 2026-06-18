@@ -36,7 +36,7 @@ const Home = () => {
     .toISOString()
     .split("T")[0];
 
-
+const [showAppointmentPopup, setShowAppointmentPopup] = useState(false);
   // WhatsApp confirmation
   const handleWhatsAppBooking = () => {
     if (
@@ -51,28 +51,21 @@ const Home = () => {
 
 const message = `
 BLUE BLOCK OPTICS APPOINTMENT REQUEST
-
 * Name: ${fullName}
 * Phone: ${phone}
 * Email: ${email}
-
 * Location
 > County: ${selectedCounty}
 > Constituency: ${selectedConstituency}
 > Ward: ${selectedWard}
-
 * Service: ${service}
-
 * Appointment Date: ${appointmentDate}
-
 * Appointment Time: ${appointmentTime}
-
 * Budget: ${budget}
-
 _ I would like to confirm my appointment. _
 `;
-    // Replace with your WhatsApp number
-    const whatsappNumber = "254723697616";
+    // WhatsApp number
+    const whatsappNumber=process.env.REACT_APP_WHATSAPP_NUMBER;
 
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
       message
@@ -122,7 +115,23 @@ _ I would like to confirm my appointment. _
     selectedConstituency,
     areas
   ]);
+const handleAppointmentWhatsApp = () => {
+  const message = `
+Hello Blue Block Optics,
+I would like to book an Eye Check Up appointment.
+* Full Name: ${fullName}
+* Phone Number: ${phone}
+* Email Address: ${email}
+* Preferred Time: ${appointmentTime}
+Thank you.
+`;
 
+  const whatsappNumber=process.env.REACT_APP_WHATSAPP_NUMBER;
+ 
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+  window.open(url, "_blank");
+};
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden">
@@ -138,7 +147,7 @@ _ I would like to confirm my appointment. _
       />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/70"></div>
 
 
       <div className="relative z-10 container mx-auto px-4 md:px-8 py-12 md:py-20">
@@ -149,7 +158,7 @@ _ I would like to confirm my appointment. _
           {/* Hero Left Side */}
           <div className="w-full lg:w-1/2 text-grey">
 
-            <h1 className="text-black text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-4">
               See the World <br />
               With Perfect
               <span className="text-sky-400">
@@ -158,16 +167,17 @@ _ I would like to confirm my appointment. _
             </h1>
 
 
-            <p className="text-lg text-gray-300 mb-6 max-w-xl">
+            <p className="text-lg text-gray-200 mb-6 max-w-xl">
               Blue Block Optics provides professional eye examinations,
               prescription lenses, stylish frames, reading glasses,
               and personalized vision care designed around your lifestyle.
             </p>
-
-
-            <button className="bg-sky-400 hover:bg-sky-700 px-6 py-3 rounded-lg font-medium transition">
-              Book Eye Check Up →
-            </button>
+          <button
+          onClick={() => setShowAppointmentPopup(true)}
+          className="bg-sky-400 hover:bg-sky-700 px-6 py-3 rounded-lg font-bold text-white transition"
+          >
+          Book Eye Check Up →
+          </button>
 
           </div>
                     {/* Booking Card */}
@@ -369,15 +379,15 @@ _ I would like to confirm my appointment. _
                       </option>
 
                       <option>
-                        KSh 1,000 - 2,000
+                        KSh 3,500 - 5,000
                       </option>
 
                       <option>
-                        KSh 2,000 - 5,000
+                        KSh 5,000 - 7,000
                       </option>
 
                       <option>
-                        KSh 5,000 - 10,000
+                        KSh 7,000 - 10,000
                       </option>
 
                       <option>
@@ -411,7 +421,7 @@ _ I would like to confirm my appointment. _
                       setShowConfirmation(true);
 
                     }}
-                    className="w-full bg-sky-400 hover:bg-sky-700 text-white py-3 rounded-lg font-medium transition"
+                    className="w-full bg-sky-400 hover:bg-sky-700 text-white py-3 rounded-lg font-black transition"
                   >
                     Check Availability
                   </button>
@@ -614,7 +624,188 @@ _ I would like to confirm my appointment. _
 
 
       </div>
+{/* Appointment Popup */}
+{showAppointmentPopup && (
+  <div
+    className="
+      fixed inset-0 
+      bg-black/70 
+      backdrop-blur-sm
+      z-50
+      flex items-center justify-center
+      p-4
+    "
+    onClick={() => setShowAppointmentPopup(false)}
+  >
 
+    {/* Card */}
+    <div
+      className="
+        bg-[#f3f1eb]
+        w-full
+        max-w-lg
+        p-8
+        rounded-2xl
+        shadow-2xl
+        relative
+        border border-sky-200
+      "
+      onClick={(e) => e.stopPropagation()}
+    >
+
+      {/* Close Button */}
+      <button
+        onClick={() => setShowAppointmentPopup(false)}
+        className="
+          absolute
+          top-4
+          right-5
+          text-3xl
+          hover:rotate-90
+          transition-transform
+          duration-300
+        "
+      >
+        ×
+      </button>
+
+
+      {/* Heading */}
+      <h2 className="text-3xl font-black uppercase mb-8">
+        Confirm Your 
+        <span className="text-sky-400">
+          {" "}Appointment
+        </span>
+      </h2>
+
+
+      {/* Form */}
+      <div className="space-y-5">
+
+        {/* Name */}
+        <div>
+          <label className="font-semibold block mb-2">
+            Full Name
+          </label>
+
+          <input
+            type="text"
+            placeholder="Enter your full name"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            className="
+              w-full
+              border border-gray-300
+              rounded-lg
+              px-4 py-3
+              outline-none
+              focus:border-sky-400
+            "
+          />
+        </div>
+
+
+        {/* Phone */}
+        <div>
+          <label className="font-semibold block mb-2">
+            Phone Number
+          </label>
+
+          <input
+          type="tel"
+          placeholder="07XXXXXXXX"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          className="
+          w-full
+          border border-gray-300
+          rounded-lg
+          px-4 py-3
+          outline-none
+          focus:border-sky-400
+        "
+      />
+        </div>
+
+
+        {/* Email */}
+        <div>
+          <label className="font-semibold block mb-2">
+            Email Address
+          </label>
+
+          <input
+          type="email"
+          placeholder="example@gmail.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="
+            w-full
+            border border-gray-300
+            rounded-lg
+            px-4 py-3
+            outline-none
+            focus:border-sky-400
+            "
+            />
+        </div>
+
+
+        {/* Time */}
+        <div>
+          <label className="font-semibold block mb-2">
+            Preferred Appointment Time
+          </label>
+          <select
+            value={appointmentTime}
+            onChange={(e) => setAppointmentTime(e.target.value)}
+            className="
+                w-full
+                border border-gray-300
+                rounded-lg
+                px-4 py-3
+                outline-none
+                focus:border-sky-400
+                "
+                >
+  <option value="">Select Time</option>
+  <option>08:00 AM</option>
+  <option>09:00 AM</option>
+  <option>10:00 AM</option>
+  <option>11:00 AM</option>
+  <option>12:00 PM</option>
+  <option>02:00 PM</option>
+  <option>03:00 PM</option>
+  <option>04:00 PM</option>
+</select>
+        </div>
+
+
+        {/* WhatsApp Button */}
+        <button
+        onClick={handleAppointmentWhatsApp}
+          className="
+            w-full
+            bg-sky-400
+            hover:bg-sky-700
+            text-white
+            px-6
+            py-4
+            rounded-lg
+            font-bold
+            transition
+            mt-4
+          "
+        >
+          Confirm on WhatsApp →
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+)}
     </section>
 
   );

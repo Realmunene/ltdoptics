@@ -36,7 +36,41 @@ const NavigationBar = () => {
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
+  const [showPopup, setShowPopup] = useState(false);
+  const [serviceType, setServiceType] = useState("");
 
+  const [fullName, setFullName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [time, setTime] = useState("");
+  const [notes, setNotes] = useState("");
+const openPopup = (type) => {
+  setServiceType(type);
+  setShowPopup(true);
+};
+
+
+const handleWhatsAppConfirm = () => {
+
+const message = `
+Hello Blue Block Optics,
+I would like to request: ${serviceType}
+* Full Name: ${fullName}
+* Phone Number: ${phone}
+* Email: ${email}
+* Preferred Time: ${time}
+* Notes: ${notes}
+Thank you.
+`;
+
+const whatsappNumber=process.env.REACT_APP_WHATSAPP_NUMBER; 
+
+const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+window.open(url, "_blank");
+
+setShowPopup(false);
+};
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 md:px-8">
@@ -128,20 +162,18 @@ const NavigationBar = () => {
           {/* Desktop Buttons */}
           <div className="hidden md:flex gap-3">
 
-            <Link
-              to="/book-appointment"
-              className="bg-sky-400 text-white px-5 py-2 rounded-lg hover:bg-sky-700 transition"
+            <button
+            onClick={() => openPopup("Eye Checkup Appointment")}
+            className="bg-sky-400 text-white px-5 py-2 rounded-lg hover:bg-sky-700 transition"
             >
-              Book Appointment
-            </Link>
-
-
-            <Link
-              to="/lens-renewal"
-              className="border-2 border-sky-400 text-sky-600 px-5 py-2 rounded-lg hover:bg-sky-600 hover:text-white transition"
+            Book Appointment
+            </button>
+            <button
+            onClick={() => openPopup("Lens Renewal")}
+            className="border-2 border-sky-400 text-sky-600 px-5 py-2 rounded-lg hover:bg-sky-600 hover:text-white transition"
             >
-              Lens Renewal
-            </Link>
+            Lens Renewal
+            </button>
 
           </div>
 
@@ -209,9 +241,7 @@ const NavigationBar = () => {
               >
                 Designed Frames
               </Link>
-
             </div>
-
             <Link
               to="/about"
               onClick={closeMobileMenu}
@@ -219,34 +249,113 @@ const NavigationBar = () => {
             >
               About Us
             </Link>
-
-
             <div className="flex flex-col gap-3 mt-4">
-
-              <Link
-                to="/book-appointment"
-                onClick={closeMobileMenu}
-                className="bg-sky-400 text-white text-center px-5 py-3 rounded-lg hover:bg-sky-700"
+              <button
+                onClick={() => openPopup("Eye Checkup Appointment")}
+                className="bg-sky-400 text-white px-5 py-2 rounded-lg hover:bg-sky-700 transition"
               >
                 Book Appointment
-              </Link>
-
-
-              <Link
-                to="/lens-renewal"
-                onClick={closeMobileMenu}
-                className="border-2 border-sky-400 text-sky-600 text-center px-5 py-3 rounded-lg hover:bg-sky-600 hover:text-white"
+              </button>
+              <button
+                onClick={() => openPopup("Lens Renewal")}
+                className="border-2 border-sky-400 text-sky-600 px-5 py-2 rounded-lg hover:bg-sky-600 hover:text-white transition"
               >
                 Lens Renewal
-              </Link>
-
+              </button>
             </div>
-
           </div>
-
         )}
-
       </div>
+        {showPopup && (
+        <div
+        className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        onClick={() => setShowPopup(false)}
+        >
+
+        <div
+        className="bg-[#f3f1eb] max-w-lg w-full p-8 rounded-2xl shadow-2xl relative border border-sky-200"
+        onClick={(e)=>e.stopPropagation()}
+        >
+
+        <button
+        onClick={()=>setShowPopup(false)}
+        className="absolute top-4 right-5 text-3xl hover:rotate-90 transition"
+        >
+        ×
+        </button>
+        <h2 className="text-3xl font-black uppercase mb-8">
+        Confirm Your
+        <span className="text-sky-400">
+         {serviceType}
+        </span>
+        </h2>
+        <div className="space-y-4">
+        <input
+        type="text"
+        placeholder="Full Name"
+        value={fullName}
+        onChange={(e)=>setFullName(e.target.value)}
+        className="w-full border p-3 rounded-lg"
+        />
+        <input
+        type="tel"
+placeholder="07XXXXXXXX"
+value={phone}
+onChange={(e)=>setPhone(e.target.value)}
+className="w-full border p-3 rounded-lg"
+        />
+        <input
+        type="email"
+placeholder="example@gmail.com"
+value={email}
+onChange={(e)=>setEmail(e.target.value)}
+className="w-full border p-3 rounded-lg"
+        />
+        <select
+value={time}
+onChange={(e)=>setTime(e.target.value)}
+className="w-full border p-3 rounded-lg"
+>
+
+<option value="">Select Time</option>
+<option>08:00 AM</option>
+<option>09:00 AM</option>
+<option>10:00 AM</option>
+<option>11:00 AM</option>
+<option>12:00 PM</option>
+<option>02:00 PM</option>
+<option>03:00 PM</option>
+<option>04:00 PM</option>
+
+        </select>
+        <textarea
+        placeholder="Additional Notes (optional)"
+        value={notes}
+        onChange={(e)=>setNotes(e.target.value)}
+        className="w-full border p-3 rounded-lg h-24"
+        />
+       <button
+onClick={handleWhatsAppConfirm}
+className="
+w-full
+bg-sky-400
+hover:bg-sky-700
+text-white
+font-bold
+py-4
+rounded-lg
+transition
+"
+>
+Confirm on WhatsApp →
+       </button>
+
+       </div>
+
+       </div>
+
+       </div>
+       )}
     </nav>
   );
 };

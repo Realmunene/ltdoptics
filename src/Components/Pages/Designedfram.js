@@ -1,134 +1,141 @@
 import React, { useState } from "react";
 
 // IMPORT IMAGES
-import img1 from "../Assets/images/slide1.jpg";
-import img1a from "../Assets/images/slide1.jpg";
-import img1b from "../Assets/images/slide1.jpg";
-import img1c from "../Assets/images/slide1.jpg";
-
-import img2 from "../Assets/images/slide1.jpg";
-import img2a from "../Assets/images/slide1.jpg";
-import img2b from "../Assets/images/slide1.jpg";
-import img2c from "../Assets/images/slide1.jpg";
-
-import img3 from "../Assets/images/slide1.jpg";
-import img3a from "../Assets/images/slide1.jpg";
-import img3b from "../Assets/images/slide1.jpg";
-import img3c from "../Assets/images/slide1.jpg";
-
-import img4 from "../Assets/images/slide1.jpg";
-import img4a from "../Assets/images/slide1.jpg";
-import img4b from "../Assets/images/slide1.jpg";
-import img4c from "../Assets/images/slide1.jpg";
-
-import img5 from "../Assets/images/slide1.jpg";
-import img5a from "../Assets/images/slide1.jpg";
-import img5b from "../Assets/images/slide1.jpg";
-import img5c from "../Assets/images/slide1.jpg";
-
-import img6 from "../Assets/images/slide1.jpg";
-import img6a from "../Assets/images/slide1.jpg";
-import img6b from "../Assets/images/slide1.jpg";
-import img6c from "../Assets/images/slide1.jpg";
+import img1 from "../Assets/image2/12.jpg";
+import img2 from "../Assets/image2/L19.jpeg";
+import img3 from "../Assets/image2/L15.jpeg";
+import img4 from "../Assets/image2/sideglasses.jpeg";
+import img5 from "../Assets/image2/L17.jpeg";
+import img6 from "../Assets/image2/lsun.jpeg";
 
 // HERO IMAGE
-import heroImage from "../Assets/images/slide1.jpg";
+import heroImage from "../Assets/image2/blueblockshop.jpg";
 
 const glassesData = [
   {
     id: 1,
-    name: "Classic Reading Glasses",
-    price: 25,
+    name: "Gucci GG 3562 eyeglasses Frame",
     description:
-      "Comfortable lightweight reading glasses designed for everyday reading.",
-    date: "2025-01-15",
-    images: [img1, img1a, img1b, img1c],
+      "Features a red tortoise acetate frame with the interlocking G logo on the temples.",
+    images: [img1],
   },
   {
     id: 2,
-    name: "Premium Vision Readers",
-    price: 40,
+    name: "RIERA glasses",
     description:
-      "Premium quality reading glasses with anti-reflective lenses.",
-    date: "2025-02-10",
-    images: [img2, img2a, img2b, img2c],
+      "Feature a slim black frame with contrasting silver sides.",
+    images: [img2],
   },
   {
     id: 3,
-    name: "Modern Reader Pro",
-    price: 35,
+    name: "Tan Design eyeglasses Frame",
     description:
-      "Stylish modern frames perfect for reading and daily wear.",
-    date: "2025-03-08",
-    images: [img3, img3a, img3b, img3c],
+      "Sleek, transparent grey frames perfect for digital screens and daily wear.",
+    images: [img3],
   },
   {
     id: 4,
-    name: "Smart Lens Reader",
-    price: 50,
+    name: "Boss 1897 model Frame",
     description:
-      "Advanced reading glasses with enhanced clarity and comfort.",
-    date: "2025-04-01",
-    images: [img4, img4a, img4b, img4c],
+      "Features minimalist metal details on the temples.",
+    images: [img4],
   },
   {
     id: 5,
-    name: "Elegant Reader",
-    price: 29,
+    name: "JJ E12791-C4 eyeglasses Frame",
     description:
-      "Elegant lightweight reading glasses for professionals.",
-    date: "2025-05-18",
-    images: [img5, img5a, img5b, img5c],
+      "Feature a transparent grey acetate frame in a full-rim rectangular shape.",
+    images: [img5],
   },
   {
     id: 6,
-    name: "Vision Max",
-    price: 60,
+    name: "Sting SST410 sunglasses Frame",
     description:
-      "Premium high-end reading glasses for superior vision.",
-    date: "2025-06-01",
-    images: [img6, img6a, img6b, img6c],
+      "Feature a distinctive textured matte black frame.",
+    images: [img6],
   },
 ];
 
 const Designedfram = () => {
-  const [sortType, setSortType] = useState("low-high");
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(1);
+  // Enquiry Popup States
+const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+const [selectedProduct, setSelectedProduct] = useState(null);
 
-// Product popup
-const [selectedGlass, setSelectedGlass] = useState(null);
+const [fullName, setFullName] = useState("");
+const [phone, setPhone] = useState("");
+const [email, setEmail] = useState("");
+const [message, setMessage] = useState("");
+const [consent, setConsent] = useState(false);
+const [sending, setSending] = useState(false);
 
-// Product image preview inside modal
-const [activeImage, setActiveImage] = useState(null);
+
+// WhatsApp Enquiry Handler
+const handleProductEnquiry = () => {
+
+  if (!fullName || !phone || !email) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+
+  if (!consent) {
+    alert("Please accept the consent notice before proceeding.");
+    return;
+  }
+
+
+  setSending(true);
+
+const whatsappNumber=process.env.REACT_APP_WHATSAPP_NUMBER;
+
+  const whatsappMessage = `
+Hello Blue Block Optics,
+
+I would like to enquire about the following product:
+Product:${selectedProduct?.name}
+Customer Details:
+* Name: ${fullName}
+* Phone: ${phone}
+* Email: ${email}
+Additional Message:
+${message || "None"}
+Kindly provide me with more information.
+`;
+
+
+  const url =
+    `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+
+
+  window.open(url, "_blank");
+
+
+  setTimeout(() => {
+    setSending(false);
+    setShowEnquiryForm(false);
+
+    // Reset form
+    setFullName("");
+    setPhone("");
+    setEmail("");
+    setMessage("");
+    setConsent(false);
+
+  }, 1000);
+
+};
 
   const itemsPerPage = 6;
 
-  // SEARCH + SORT
-  const filteredData = glassesData
-    .filter((item) =>
-      item.name.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-    .sort((a, b) => {
-      switch (sortType) {
-        case "low-high":
-          return a.price - b.price;
-        case "high-low":
-          return b.price - a.price;
-        case "a-z":
-          return a.name.localeCompare(b.name);
-        case "old-new":
-          return new Date(a.date) - new Date(b.date);
-        case "new-old":
-          return new Date(b.date) - new Date(a.date);
-        default:
-          return 0;
-      }
-    });
-
-  const totalPages = Math.ceil(
-    filteredData.length / itemsPerPage
+  // Search only
+  const filteredData = glassesData.filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
   const displayedItems = filteredData.slice(
     (page - 1) * itemsPerPage,
@@ -137,6 +144,7 @@ const [activeImage, setActiveImage] = useState(null);
 
   return (
     <div className="bg-gray-50 min-h-screen">
+
       {/* HERO */}
       <section
         className="relative h-[450px] bg-cover bg-center flex items-center justify-center"
@@ -147,61 +155,31 @@ const [activeImage, setActiveImage] = useState(null);
         <div className="absolute inset-0 bg-black/50" />
 
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-5xl md:text-6xl font-bold text-sky-800 uppercase mb-8">
-            Our Designed Frames
+          <h1 className="text-5xl md:text-6xl font-bold text-white uppercase mb-8">
+           Frames and Glasses
           </h1>
 
-          {/* SEARCH + SORT */}
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-            <input
-              type="text"
-              placeholder="Search reading glasses..."
-              value={searchTerm}
-              onChange={(e) =>
-                setSearchTerm(e.target.value)
-              }
-              className="w-full md:w-[500px] px-6 py-4 rounded-lg shadow-lg outline-none text-lg"
-            />
-
-            <select
-              value={sortType}
-              onChange={(e) => {
+          <input
+            type="text"
+            placeholder="Search Frames or glasses..."
+            value={searchTerm}
+            onChange={(e) => {
               setSearchTerm(e.target.value);
               setPage(1);
-              }}
-              className="px-6 py-4 rounded-lg shadow-lg text-lg outline-none"
-            >
-              <option value="low-high">
-                Price: Low to High
-              </option>
-              <option value="high-low">
-                Price: High to Low
-              </option>
-              <option value="a-z">A - Z</option>
-              <option value="old-new">
-                Old to New
-              </option>
-              <option value="new-old">
-                New to Old
-              </option>
-            </select>
-          </div>
+            }}
+            className="w-full md:w-[500px] px-6 py-4 rounded-lg shadow-lg outline-none text-lg"
+          />
         </div>
       </section>
 
       {/* DESCRIPTION */}
       <section className="max-w-7xl mx-auto px-6 py-12 text-center">
         <p className="text-gray-600 text-lg leading-relaxed max-w-4xl mx-auto">
-          Explore our premium range of reading glasses,
-          crafted to provide maximum comfort, sharper
-          clarity, and elegant designs. Whether for
-          everyday reading, office use, or stylish wear,
-          our collection ensures functionality meets
-          fashion.
+          Discover our exceptional collection of eyewear frames and glasses designs, crafted to complement every face shape, personality, and lifestyle. From timeless classics to contemporary trends and bold statement styles, our collection combines comfort, durability, functionality, and elegance—helping you achieve clear vision while expressing your unique sense of style.
         </p>
       </section>
 
-      {/* 2 X 3 GRID */}
+      {/* PRODUCTS */}
       <section className="max-w-7xl mx-auto px-6 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {displayedItems.map((glass) => (
@@ -210,95 +188,257 @@ const [activeImage, setActiveImage] = useState(null);
               className="bg-white rounded-lg shadow-lg p-5 hover:shadow-xl transition"
             >
               <div className="flex flex-col md:flex-row gap-5">
-                {/* LEFT IMAGES */}
+
+                {/* IMAGE */}
                 <div className="w-full md:w-[45%]">
-                  {/* MAIN IMAGE */}
                   <img
                     src={glass.images[0]}
                     alt={glass.name}
-                    className="w-full h-52 object-cover rounded-xl"
+                    className="w-full h-full min-h-[280px] object-cover rounded-xl"
                   />
-
-                  {/* THUMBNAILS */}
-                  <div className="grid grid-cols-3 gap-2 mt-3">
-                    {glass.images
-                      .slice(1)
-                      .map((img, index) => (
-                        <img
-                          key={index}
-                          src={img}
-                          alt="thumbnail"
-                          className="h-20 w-full object-cover rounded-lg"
-                        />
-                      ))}
-                  </div>
                 </div>
 
                 {/* DETAILS */}
                 <div className="flex-1 flex flex-col">
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                {glass.name}
-                </h2>
+                  <h2 className="text-2xl font-bold text-gray-800 mb-3">
+                    {glass.name}
+                  </h2>
 
-                <p className="text-blue-600 text-xl font-semibold mb-4">
-                ${glass.price}
-                </p>
+                  <p className="text-gray-600 leading-relaxed">
+                    {glass.description}
+                  </p>
+                  <button
+  onClick={() => {
+    setSelectedProduct(glass);
+    setShowEnquiryForm(true);
+  }}
+  className="
+    mt-5
+    w-fit
+    px-6
+    py-2
+    rounded-lg
+    bg-sky-400
+    text-black
+    font-semibold
+    hover:bg-sky-700
+    hover:text-white
+    transition
+    duration-300
+  "
+>
+  Enquire →
+</button>
+                </div>
 
-                <p className="text-gray-600 leading-relaxed">
-                {glass.description}
-                </p>
-
-                {/* BUY BUTTON */}
-                <button
-                  className="mt-5 w-fit px-6 py-2 rounded-lg bg-sky-400 text-black font-semibold hover:bg-sky-700 transition-colors duration-300"
-                  >
-                  Buy With Us
-                  </button>
-                  </div>
               </div>
             </div>
           ))}
         </div>
 
         {/* PAGINATION */}
-        <div className="flex justify-center items-center gap-3 mt-12">
-          <button
-            onClick={() =>
-              setPage((prev) =>
-                Math.max(prev - 1, 1)
-              )
-            }
-            className="px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300"
-          >
-            {"<"}
-          </button>
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-3 mt-12">
 
-          {[...Array(totalPages)].map((_, i) => (
             <button
-              key={i}
-              onClick={() => setPage(i + 1)}
-              className={`w-10 h-10 rounded-full ${
-                page === i + 1
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200"
-              }`}
+              onClick={() =>
+                setPage((prev) => Math.max(prev - 1, 1))
+              }
+              className="px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300"
             >
-              {i + 1}
+              {"<"}
             </button>
-          ))}
 
-          <button
-            onClick={() =>
-              setPage((prev) =>
-                Math.min(prev + 1, totalPages)
-              )
-            }
-            className="px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300"
-          >
-            {">"}
-          </button>
-        </div>
+            {[...Array(totalPages)].map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setPage(i + 1)}
+                className={`w-10 h-10 rounded-full ${
+                  page === i + 1
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-200"
+                }`}
+              >
+                {i + 1}
+              </button>
+            ))}
+
+            <button
+              onClick={() =>
+                setPage((prev) =>
+                  Math.min(prev + 1, totalPages)
+                )
+              }
+              className="px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300"
+            >
+              {">"}
+            </button>
+
+          </div>
+        )}
       </section>
+{/* ENQUIRY POPUP MODAL */}
+{showEnquiryForm && selectedProduct && (
+  <div
+    className="
+      fixed inset-0
+      bg-black/70
+      backdrop-blur-sm
+      z-[60]
+      flex items-center justify-center
+      p-2 md:p-4
+    "
+    onClick={() => setShowEnquiryForm(false)}
+  >
+    {/* CARD */}
+    <div
+      className="
+        bg-[#f5f3ee]
+        w-full
+        max-w-2xl
+        max-h-[90vh]
+        overflow-y-auto
+        relative
+        border border-gray-400
+        shadow-2xl
+        rounded-2xl
+        p-6 md:p-10
+      "
+      onClick={(e) => e.stopPropagation()}
+    >
+
+      {/* CLOSE BUTTON */}
+      <button
+        onClick={() => setShowEnquiryForm(false)}
+        className="
+          sticky
+          top-0
+          ml-auto
+          block
+          text-4xl
+          font-light
+          bg-[#f5f3ee]
+          z-20
+          hover:rotate-90
+          transition-transform
+          duration-300
+        "
+      >
+        ×
+      </button>
+
+      {/* TITLE */}
+      <div className="mb-6">
+        <h2 className="text-3xl md:text-5xl font-black uppercase">
+          Product <span className="text-sky-400">Enquiry</span>
+        </h2>
+
+        <p className="text-gray-600 mt-3">
+          You are enquiring about:
+        </p>
+
+        <h3 className="text-xl font-bold text-sky-700 mt-1">
+          {selectedProduct?.name}
+        </h3>
+      </div>
+
+      {/* FORM */}
+      <div className="space-y-5">
+
+        {/* NAME */}
+        <div>
+          <label className="font-semibold block mb-2">
+            Full Name
+          </label>
+          <input
+            type="text"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            placeholder="Enter your full name"
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:border-sky-400 outline-none"
+          />
+        </div>
+
+        {/* PHONE */}
+        <div>
+          <label className="font-semibold block mb-2">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            placeholder="07XXXXXXXX"
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:border-sky-400 outline-none"
+          />
+        </div>
+
+        {/* EMAIL */}
+        <div>
+          <label className="font-semibold block mb-2">
+            Email Address
+          </label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="example@gmail.com"
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:border-sky-400 outline-none"
+          />
+        </div>
+
+        {/* MESSAGE */}
+        <div>
+          <label className="font-semibold block mb-2">
+            Message (Optional)
+          </label>
+          <textarea
+            rows="4"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Any specific request..."
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:border-sky-400 outline-none"
+          />
+        </div>
+
+        {/* CONSENT */}
+        <div className="flex items-start gap-3">
+          <input
+            type="checkbox"
+            checked={consent}
+            onChange={(e) => setConsent(e.target.checked)}
+            className="mt-1 w-5 h-5 accent-sky-400"
+          />
+          <p className="text-sm text-gray-600">
+            I agree to be contacted regarding this product enquiry.
+          </p>
+        </div>
+
+        {/* BUTTON */}
+        <button
+          onClick={handleProductEnquiry}
+          disabled={sending}
+          className="
+            w-full
+            bg-sky-400
+            text-white
+            py-4
+            rounded-lg
+            font-bold
+            uppercase
+            tracking-wide
+            hover:bg-sky-700
+            transition
+            disabled:bg-gray-400
+          "
+        >
+          {sending ? "Opening WhatsApp..." : "Confirm on WhatsApp →"}
+        </button>
+
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 };
