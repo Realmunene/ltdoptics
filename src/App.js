@@ -21,8 +21,6 @@ import Sunglasses from "./Components/Pages/Sunglases";
 import EyewearAccessories from "./Components/Pages/Accessories";
 import DesignedFrames from "./Components/Pages/Designedfram";
 import About from "./Components/Pages/Aboutus";
-import Bookappointment from "./Components/Pages/Bookappointment";
-import LensRenewal from "./Components/Pages/LensRenewal";
 import Ourservices from "./Components/Ourservices";
 
 
@@ -81,14 +79,6 @@ function App() {
           element={<About />}
         />
 
-        <Route
-          path="/book-appointment"
-          element={<Bookappointment />}
-        />
-        <Route
-          path="/lens-renewal"
-          element={<LensRenewal />}
-        />
       </Routes>
 
       <WhatsAppChat />
