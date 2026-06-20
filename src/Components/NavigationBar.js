@@ -105,7 +105,7 @@ setShowPopup(false);
       lg:text-4xl
     "
   >
-    <span className="text-sky-600">BLUEBLOCK</span>
+    <span className="text-sky-600">BLUE BLOCK </span>
     <span className="text-red-600">OPTICS</span>
   </span>
 </Link>

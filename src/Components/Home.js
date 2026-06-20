@@ -157,26 +157,23 @@ Thank you.
 
           {/* Hero Left Side */}
           <div className="w-full lg:w-1/2 text-grey">
-
-            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-4">
-              See the World <br />
-              With Perfect
-              <span className="text-sky-400">
-                {" "}Clarity
-              </span>
+          <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-4">
+              Here at <span className="text-sky-600">Blue Block</span> <span className="text-red-600">Optics</span><br />
+              We Deal In :-
             </h1>
 
-
-            <p className="text-lg text-gray-200 mb-6 max-w-xl">
-              Blue Block Optics provides professional eye examinations,
-              prescription lenses, stylish frames, reading glasses,
-              and personalized vision care designed around your lifestyle.
-            </p>
+            <ul className="text-lg text-gray-200 mb-6 max-w-xl uppercase tracking-wide space-y-2 list-disc list-inside">
+              <li>Eye Check Up</li>
+              <li>Prescription Lenses</li>
+              <li>Designer Frames</li>
+              <li>Protective Glasses</li>
+              <li>Optical Accessories</li>
+            </ul>
           <button
           onClick={() => setShowAppointmentPopup(true)}
           className="bg-sky-400 hover:bg-sky-700 px-6 py-3 rounded-lg font-bold text-white transition"
           >
-          Book Eye Check Up →
+          Book Us Now →
           </button>
 
           </div>
