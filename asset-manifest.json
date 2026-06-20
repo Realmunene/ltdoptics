@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f0dc6913.css",
-    "main.js": "/static/js/main.3f62eb7f.js",
+    "main.css": "/static/css/main.5e7e4185.css",
+    "main.js": "/static/js/main.4c5b4688.js",
     "static/js/453.5a812e76.chunk.js": "/static/js/453.5a812e76.chunk.js",
     "static/media/premium.jpg": "/static/media/premium.a9b49c5c2bb0a108d0f7.jpg",
     "static/media/budgeted glass.jpg": "/static/media/budgeted glass.5d5cb73ee26fa782f540.jpg",
@@ -104,12 +104,12 @@
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.cfbad32c79d9dda6af4a.woff2",
     "index.html": "/index.html",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.296da06936a3373940c8.woff2",
-    "main.f0dc6913.css.map": "/static/css/main.f0dc6913.css.map",
-    "main.3f62eb7f.js.map": "/static/js/main.3f62eb7f.js.map",
+    "main.5e7e4185.css.map": "/static/css/main.5e7e4185.css.map",
+    "main.4c5b4688.js.map": "/static/js/main.4c5b4688.js.map",
     "453.5a812e76.chunk.js.map": "/static/js/453.5a812e76.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f0dc6913.css",
-    "static/js/main.3f62eb7f.js"
+    "static/css/main.5e7e4185.css",
+    "static/js/main.4c5b4688.js"
   ]
 }
