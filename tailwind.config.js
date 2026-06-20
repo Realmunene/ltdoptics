@@ -10,6 +10,7 @@ export default {
         primary: "#06fffb",
         dark: "#000e68",
       },
+      
 
       animation: {
         zoom: "zoom 20s ease-in-out infinite alternate",
@@ -34,6 +35,7 @@ export default {
             transform: "translateY(-4px)",
           },
         },
+
       },
     },
   },

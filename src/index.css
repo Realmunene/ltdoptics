@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: "Ostrich Black";
+  src: url("./Components/Assets/fonts/Ostrich Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-ostrich-black {
+  font-family: "Ostrich Black", Impact, sans-serif;
+}

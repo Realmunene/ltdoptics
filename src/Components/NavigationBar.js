@@ -79,36 +79,34 @@ setShowPopup(false);
 
           {/* Logo */}
           <Link to="/ltdoptics" className="flex items-center gap-1 sm:gap-2 lg:gap-3">
-  <img
-    src={logo}
-    alt="Blue Block Logo"
-    className="
-      h-8 
-      sm:h-10 
-      lg:h-12 
-      w-auto 
-      object-contain 
-      flex-shrink-0
-    "
-  />
-
-  <span
-    className="
-      font-black 
-      uppercase 
-      tracking-tight 
-      leading-none 
-      whitespace-nowrap 
-      animate-wave
-      text-lg
-      sm:text-2xl
-      lg:text-4xl
-    "
-  >
-    <span className="text-sky-600">BLUE BLOCK </span>
-    <span className="text-red-600">OPTICS</span>
-  </span>
-</Link>
+          <img
+            src={logo}
+            alt="Blue Block Logo"
+            className="
+              h-8 
+              sm:h-8 
+              lg:h-10 
+              w-auto 
+              object-contain 
+              flex-shrink-0
+            "
+          />
+              <span
+          className="
+            font-ostrich-black
+            tracking-tight
+            leading-none
+            whitespace-nowrap
+            animate-wave
+            text-xl
+            sm:text-3xl
+            lg:text-5xl
+          "
+        >
+          <span className="text-sky-600">BLUE BLOCK </span>
+          <span className="text-red-600">OPTICS</span>
+        </span>
+        </Link>
           {/* Desktop Navigation */}
           <div className="hidden xl:flex items-center space-x-6">
 
