@@ -13,6 +13,7 @@ export default {
 
       animation: {
         zoom: "zoom 20s ease-in-out infinite alternate",
+        wave: "wave 2s ease-in-out infinite",
       },
 
       keyframes: {
@@ -22,6 +23,15 @@ export default {
           },
           "100%": {
             transform: "scale(1.2)",
+          },
+        },
+
+        wave: {
+          "0%, 100%": {
+            transform: "translateY(0px)",
+          },
+          "50%": {
+            transform: "translateY(-4px)",
           },
         },
       },

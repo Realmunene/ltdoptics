@@ -10,22 +10,24 @@ import logo from "./Assets/blue block logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white pt-12 pb-6">
+    <footer className="bg-gray-900 text-sky-700 pt-12 pb-6">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
             {/* Logo */}
-          <Link to="/ltdoptics" className="flex items-center">
-            <img
-              src={logo}
-              alt="Blue Block Logo"
-              className="h-10 w-auto object-contain rounded-lg"
-            /> 
-            <h3 className=" text-2xl font-bold ">
-              Blue<span className="text-sky-400"> Block Optics</span>
-            </h3>
-          </Link>
+          <Link to="/ltdoptics" className="flex items-center gap-2 mb-4">
+  <img
+    src={logo}
+    alt="Blue Block Logo"
+    className="h-8 sm:h-10 lg:h-12 w-auto object-contain rounded-lg flex-shrink-0"
+  />
+
+  <h3 className="font-black uppercase leading-none whitespace-nowrap text-lg sm:text-xl lg:text-2xl">
+    <span className="text-sky-600">BlueBlock</span>
+    <span className="text-red-600">Optics</span>
+  </h3>
+</Link>
             <p className="text-gray-400 mb-4">
               Premium eyewear for every style and need. See the world clearly with Blue Block Optics.
             </p>
@@ -76,7 +78,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="flex items-start space-x-2">
                 <FontAwesomeIcon icon={faLocationDot} className="text-blue-400 mt-1" />
-                <span className="text-gray-400">Beach Road, Ukunda/Diani, Kenya</span>
+                <span className="text-gray-400 leading-relaxed">Beach Road, Ukunda/Diani, Kenya</span>
               </li>
               <li className="flex items-center space-x-2">
                 <FontAwesomeIcon icon={faPhone} className="text-sky-400" />
@@ -84,7 +86,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2">
                 <FontAwesomeIcon icon={faEnvelope} className="text-sky-400" />
-                <span className="text-gray-400">blueblockoptics@gmail.com</span>
+                <span className="text-gray-400 break-all">blueblockoptics@gmail.com</span>
               </li>
             </ul>
           </div>

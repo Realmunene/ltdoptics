@@ -78,21 +78,39 @@ setShowPopup(false);
         <div className="flex justify-between items-center py-4">
 
           {/* Logo */}
-          <Link to="/ltdoptics" className="flex items-center gap-2 sm:gap-3">
+          <Link to="/ltdoptics" className="flex items-center gap-1 sm:gap-2 lg:gap-3">
   <img
     src={logo}
     alt="Blue Block Logo"
-    className="h-8 sm:h-10 md:h-12 w-auto object-contain flex-shrink-0"
+    className="
+      h-8 
+      sm:h-10 
+      lg:h-12 
+      w-auto 
+      object-contain 
+      flex-shrink-0
+    "
   />
 
-  <span className="font-black uppercase tracking-wide leading-none text-sm sm:text-lg md:text-xl whitespace-nowrap">
-    BLUEBLOCK<span className="text-red-600">OPTICS</span>
+  <span
+    className="
+      font-black 
+      uppercase 
+      tracking-tight 
+      leading-none 
+      whitespace-nowrap 
+      animate-wave
+      text-lg
+      sm:text-2xl
+      lg:text-4xl
+    "
+  >
+    <span className="text-sky-600">BLUEBLOCK</span>
+    <span className="text-red-600">OPTICS</span>
   </span>
 </Link>
-
-
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden xl:flex items-center space-x-6">
 
             <Link
               to="/services"
@@ -164,7 +182,7 @@ setShowPopup(false);
 
 
           {/* Desktop Buttons */}
-          <div className="hidden md:flex gap-3">
+          <div className="hidden xl:flex gap-3">
 
             <button
             onClick={() => openPopup("Eye Checkup Appointment")}
@@ -184,7 +202,7 @@ setShowPopup(false);
 
           {/* Mobile Hamburger / Close Button */}
           <button
-            className="md:hidden text-2xl text-gray-700"
+            className="xl:hidden text-2xl text-sky-700"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <FontAwesomeIcon
