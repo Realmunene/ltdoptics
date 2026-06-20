@@ -78,13 +78,17 @@ setShowPopup(false);
         <div className="flex justify-between items-center py-4">
 
           {/* Logo */}
-          <Link to="/ltdoptics" className="flex items-center">
-            <img
-              src={logo}
-              alt="Blue Block Logo"
-              className="h-10 w-auto object-contain"
-            />
-          </Link>
+          <Link to="/ltdoptics" className="flex items-center gap-2 sm:gap-3">
+  <img
+    src={logo}
+    alt="Blue Block Logo"
+    className="h-8 sm:h-10 md:h-12 w-auto object-contain flex-shrink-0"
+  />
+
+  <span className="font-extrabold uppercase tracking-wide leading-none text-sm sm:text-lg md:text-xl whitespace-nowrap">
+    BLUEBLOCK<span className="text-red-600">OPTICS</span>
+  </span>
+</Link>
 
 
           {/* Desktop Navigation */}
