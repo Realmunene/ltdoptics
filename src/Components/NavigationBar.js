@@ -83,9 +83,9 @@ setShowPopup(false);
             src={logo}
             alt="Blue Block Logo"
             className="
-              h-8 
-              sm:h-8 
-              lg:h-10 
+              h-9 
+              sm:h-9 
+              lg:h-11 
               w-auto 
               object-contain 
               flex-shrink-0
@@ -98,9 +98,9 @@ setShowPopup(false);
             leading-none
             whitespace-nowrap
             animate-wave
-            text-xl
-            sm:text-3xl
-            lg:text-5xl
+            text-4xl
+            sm:text-4xl
+            lg:text-6xl
           "
         >
           <span className="text-sky-600">BLUE BLOCK </span>
