@@ -85,7 +85,7 @@ setShowPopup(false);
     className="h-8 sm:h-10 md:h-12 w-auto object-contain flex-shrink-0"
   />
 
-  <span className="font-extrabold uppercase tracking-wide leading-none text-sm sm:text-lg md:text-xl whitespace-nowrap">
+  <span className="font-black uppercase tracking-wide leading-none text-sm sm:text-lg md:text-xl whitespace-nowrap">
     BLUEBLOCK<span className="text-red-600">OPTICS</span>
   </span>
 </Link>
