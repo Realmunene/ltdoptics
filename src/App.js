@@ -49,42 +49,32 @@ function App() {
       <NavigationBar />
 
       <Routes>
-
         <Route path="/ltdoptics" element={<HomePage />} />
-
+        <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<Services />} />
-
         <Route
           path="/reading-glasses"
           element={<ReadingGlasses />}
         />
-
         <Route
           path="/sunglasses"
           element={<Sunglasses />}
         />
-
         <Route
           path="/eyewear-accessories"
           element={<EyewearAccessories />}
         />
-
         <Route
           path="/designed-frames"
           element={<DesignedFrames />}
         />
-
         <Route
           path="/about"
           element={<About />}
         />
-
       </Routes>
-
       <WhatsAppChat />
-
       <Footer />
-
     </div>
   );
 }
