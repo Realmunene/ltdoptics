@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.0b3d1b8c.css",
-    "main.js": "/static/js/main.76ead77f.js",
+    "main.css": "/static/css/main.488e4c2c.css",
+    "main.js": "/static/js/main.ef70cc66.js",
     "static/js/453.5a812e76.chunk.js": "/static/js/453.5a812e76.chunk.js",
     "static/media/premium.jpg": "/static/media/premium.a9b49c5c2bb0a108d0f7.jpg",
     "static/media/budgeted glass.jpg": "/static/media/budgeted glass.5d5cb73ee26fa782f540.jpg",
@@ -102,14 +102,15 @@
     "static/media/lenses.jpg": "/static/media/lenses.1e71a02325814833a78e.jpg",
     "static/media/R21.jpeg": "/static/media/R21.0a03f4d7765c0022efb3.jpeg",
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.cfbad32c79d9dda6af4a.woff2",
+    "static/media/Ostrich Black.ttf": "/static/media/Ostrich Black.8e4000dba487e9895fde.ttf",
     "index.html": "/index.html",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.296da06936a3373940c8.woff2",
-    "main.0b3d1b8c.css.map": "/static/css/main.0b3d1b8c.css.map",
-    "main.76ead77f.js.map": "/static/js/main.76ead77f.js.map",
+    "main.488e4c2c.css.map": "/static/css/main.488e4c2c.css.map",
+    "main.ef70cc66.js.map": "/static/js/main.ef70cc66.js.map",
     "453.5a812e76.chunk.js.map": "/static/js/453.5a812e76.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0b3d1b8c.css",
-    "static/js/main.76ead77f.js"
+    "static/css/main.488e4c2c.css",
+    "static/js/main.ef70cc66.js"
   ]
 }
