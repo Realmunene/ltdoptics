@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0e9d0ade.css",
-    "main.js": "/static/js/main.a467915f.js",
+    "main.js": "/static/js/main.adcb3adf.js",
     "static/js/453.5a812e76.chunk.js": "/static/js/453.5a812e76.chunk.js",
     "static/media/premium.jpg": "/static/media/premium.a9b49c5c2bb0a108d0f7.jpg",
     "static/media/budgeted glass.jpg": "/static/media/budgeted glass.5d5cb73ee26fa782f540.jpg",
@@ -16,7 +16,6 @@
     "static/media/sungla.jpg": "/static/media/sungla.f49cce8f0964aef074d7.jpg",
     "static/media/blueblockoptician.mp4": "/static/media/blueblockoptician.5adf908765b4e565230b.mp4",
     "static/media/blueblock12.jpg": "/static/media/blueblock12.c37a8ff4982538bd6e74.jpg",
-    "static/media/eyecheckup.jpg": "/static/media/eyecheckup.6491eb1d72f4b348d72d.jpg",
     "static/media/casing2.jpg": "/static/media/casing2.939763798900b84edc48.jpg",
     "static/media/cleank2.jpg": "/static/media/cleank2.72c96a1c2af5dcb9eb4b.jpg",
     "static/media/frontofice.png": "/static/media/frontofice.df339bf723b5bca339d2.png",
@@ -40,6 +39,7 @@
     "static/media/blue block inside.jpg": "/static/media/blue block inside.9f6ec3566db911b2a68d.jpg",
     "static/media/6.jpg": "/static/media/6.6970c24e0e1c8ccb6d35.jpg",
     "static/media/blue block logo.png": "/static/media/blue block logo.264dcd114f00efa400aa.png",
+    "static/media/eyecheckup.jpg": "/static/media/eyecheckup.38666c548cc4313236b8.jpg",
     "static/media/4.jpg": "/static/media/4.5def098b5cf2ea703c09.jpg",
     "static/media/12.jpg": "/static/media/12.9cbc03ef4ad832b69c43.jpg",
     "static/media/11.jpg": "/static/media/11.4948d93b88a957621f30.jpg",
@@ -106,11 +106,11 @@
     "index.html": "/index.html",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.296da06936a3373940c8.woff2",
     "main.0e9d0ade.css.map": "/static/css/main.0e9d0ade.css.map",
-    "main.a467915f.js.map": "/static/js/main.a467915f.js.map",
+    "main.adcb3adf.js.map": "/static/js/main.adcb3adf.js.map",
     "453.5a812e76.chunk.js.map": "/static/js/453.5a812e76.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0e9d0ade.css",
-    "static/js/main.a467915f.js"
+    "static/js/main.adcb3adf.js"
   ]
 }
