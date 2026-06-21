@@ -72,7 +72,7 @@ window.open(url, "_blank");
 setShowPopup(false);
 };
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className="fixed top-10 md:top-12 left-0 w-full bg-white shadow-md z-40">
       <div className="container mx-auto px-4 md:px-8">
 
         <div className="flex justify-between items-center py-4">

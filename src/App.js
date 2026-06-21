@@ -36,36 +36,25 @@ function HomePage() {
 function App() {
   return (
     <div className="min-h-screen bg-gray-100">
-      <TopBar />
-      <NavigationBar />
-      <Routes>
-        <Route path="/ltdoptics" element={<HomePage />} />
-        <Route path="/" element={<HomePage />} />
-        <Route path="/services" element={<Services />} />
-        <Route
-          path="/reading-glasses"
-          element={<ReadingGlasses />}
-        />
-        <Route
-          path="/sunglasses"
-          element={<Sunglasses />}
-        />
-        <Route
-          path="/eyewear-accessories"
-          element={<EyewearAccessories />}
-        />
-        <Route
-          path="/designed-frames"
-          element={<DesignedFrames />}
-        />
-        <Route
-          path="/about"
-          element={<About />}
-        />
-      </Routes>
-      <WhatsAppChat />
-      <Footer />
-    </div>
+  <TopBar />
+  <NavigationBar />
+
+  <main className="pt-28 md:pt-32">
+    <Routes>
+      <Route path="/ltdoptics" element={<HomePage />} />
+      <Route path="/" element={<HomePage />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/reading-glasses" element={<ReadingGlasses />} />
+      <Route path="/sunglasses" element={<Sunglasses />} />
+      <Route path="/eyewear-accessories" element={<EyewearAccessories />} />
+      <Route path="/designed-frames" element={<DesignedFrames />} />
+      <Route path="/about" element={<About />} />
+    </Routes>
+  </main>
+
+  <WhatsAppChat />
+  <Footer />
+</div>
   );
 }
 
