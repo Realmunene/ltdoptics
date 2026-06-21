@@ -10,8 +10,9 @@ export default {
         primary: "#06fffb",
         dark: "#000e68",
       },
-      
-
+      fontFamily: {
+        maximum: ['"Maximum Impact"', 'Impact', 'sans-serif'],
+      },
       animation: {
         zoom: "zoom 20s ease-in-out infinite alternate",
         wave: "wave 2s ease-in-out infinite",
