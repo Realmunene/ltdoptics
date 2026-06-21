@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.08e16eae.css",
-    "main.js": "/static/js/main.1f21b4ca.js",
+    "main.css": "/static/css/main.0e9d0ade.css",
+    "main.js": "/static/js/main.a467915f.js",
     "static/js/453.5a812e76.chunk.js": "/static/js/453.5a812e76.chunk.js",
     "static/media/premium.jpg": "/static/media/premium.a9b49c5c2bb0a108d0f7.jpg",
     "static/media/budgeted glass.jpg": "/static/media/budgeted glass.5d5cb73ee26fa782f540.jpg",
@@ -105,12 +105,12 @@
     "static/media/Ostrich Black.ttf": "/static/media/Ostrich Black.8e4000dba487e9895fde.ttf",
     "index.html": "/index.html",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.296da06936a3373940c8.woff2",
-    "main.08e16eae.css.map": "/static/css/main.08e16eae.css.map",
-    "main.1f21b4ca.js.map": "/static/js/main.1f21b4ca.js.map",
+    "main.0e9d0ade.css.map": "/static/css/main.0e9d0ade.css.map",
+    "main.a467915f.js.map": "/static/js/main.a467915f.js.map",
     "453.5a812e76.chunk.js.map": "/static/js/453.5a812e76.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.08e16eae.css",
-    "static/js/main.1f21b4ca.js"
+    "static/css/main.0e9d0ade.css",
+    "static/js/main.a467915f.js"
   ]
 }
