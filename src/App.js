@@ -6,7 +6,6 @@ import Footer from "./Components/Footer";
 import WhatsAppChat from "./Components/WhatsAppChat";
 // Pages
 import Home from "./Components/Home";
-import CategoryCarousel from "./Components/Categories";
 import HomeVision from "./Components/HomeVision";
 import Testimonials from "./Components/Testimonials";
 import ContactUs from "./Components/ContactUs";
@@ -24,7 +23,6 @@ function HomePage() {
   return (
     <>
       <Home />
-      <CategoryCarousel />
       <Ourservices />
       <HomeVision />
       <Testimonials />

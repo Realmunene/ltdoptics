@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -6,13 +6,6 @@ import logo from "./Assets/blue block logo.png";
 
 export default function WhatsAppChat() {
   const [open, setOpen] = useState(false);
-
-  // Optional: auto-show after 2.5s delay
-  useEffect(() => {
-    const timer = setTimeout(() => setOpen(true), 2500);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <>
       {/* Floating Bouncing WhatsApp Button */}

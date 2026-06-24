@@ -1,7 +1,9 @@
 // components/Home.js
 import React, { useEffect, useState } from "react";
 import bgVideo from "./Assets/blueblockoptician.mp4";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import CategoryCarousel from "./Categories";
 const Home = () => {
   // Kenya locations
   const [areas, setAreas] = useState({});
@@ -16,7 +18,7 @@ const Home = () => {
   const [service, setService] = useState("");
   const [budget, setBudget] = useState("");
   const [appointmentDate, setAppointmentDate] = useState("");
-
+  const [showBookingForm, setShowBookingForm] = useState(false);
   // Step control
   const [showConfirmation, setShowConfirmation] = useState(false);
 
@@ -159,7 +161,7 @@ Thank you.
           <div className="w-full lg:w-1/2 text-grey">
 
 
-            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-4">
+            <h1 className="text-white text-4xl md:text-4xl lg:text-5xl font-black leading-tight mb-4">
               See the World With Perfect
               <span className="text-sky-400">
                 {" "}Clarity
@@ -170,6 +172,9 @@ Thank you.
               prescription lenses, stylish frames, reading glasses,
               and personalized vision care designed around your lifestyle.
             </p>
+            <p className="text-lg text-gray-200 mb-6 max-w-xl">
+              Our focus is on providing instant and same-day eyewear delivery, ensuring our customers receive the glasses they need quickly, affordably, and with the highest level of professionalism.
+            </p>
             
           <button
           onClick={() => setShowAppointmentPopup(true)}
@@ -177,22 +182,88 @@ Thank you.
           >
           Book Us Now →
           </button>
-
           </div>
-                    {/* Booking Card */}
-          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+          {/* right side hero */}
+          <div className="w-full lg:w-1/2 relative overflow-visible"> 
+          <div className="relative z-10">
+            <CategoryCarousel />
+          </div>
+          {/* appointment button */}
+          {!showBookingForm && (
+  <div className="flex justify-center mt-4">
+  <button
+    onClick={() => setShowBookingForm(true)}
+    className="
+      w-full
+      max-w-md
+      bg-sky-400
+      hover:bg-red-700
+      text-black
+      py-4
+      rounded-lg
+      font-bold
+      text-lg
+      shadow-xl
+      transition-all
+    "
+  >
+    Appointment
+  </button>
+</div>
+)}
 
-            <div className="w-full lg:max-w-md bg-white/95 backdrop-blur-md p-6 border border-sky-400 rounded-2xl shadow-xl">
+        {/* overlay form */}
+{showBookingForm && (
+  <div
+    className="
+      absolute
+  bottom-0
+  left-0
+  z-50
+  w-full
+  lg:max-w-md
+  bg-white/95
+  backdrop-blur-md
+  p-6
+  border
+  border-sky-400
+  rounded-2xl
+  shadow-2xl
+  max-h-[80vh] overflow-y-auto
+  animate-slideUp
+    "
+  >
+  <div className="flex items-center justify-between mb-5">
+  <h2 className="text-xl font-semibold text-gray-800">
+    {showConfirmation
+      ? "Confirm Your Appointment"
+      : "Book Your Appointment"}
+  </h2>
 
-              <h2 className="text-xl font-semibold mb-5 text-gray-800">
-                {showConfirmation
-                  ? "Confirm Your Appointment"
-                  : "Book Your Appointment"}
-              </h2>
+  <button
+    onClick={() => {
+      setShowBookingForm(false);
+      setShowConfirmation(false);
+    }}
+    className="
+      flex
+      items-center
+      justify-center
+      w-8
+      h-8
+      rounded-full
+      bg-gray-100
+      hover:bg-red-100
+      text-gray-600
+      hover:text-red-600
+      transition
+    "
+  >
+    <FontAwesomeIcon icon={faTimes} />
+  </button>
+</div>
 
-
-              {!showConfirmation ? (
-
+   {!showConfirmation ? (
                 <>
                   {/* Location Selection */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
@@ -552,13 +623,11 @@ Thank you.
 
               )}
 
-            </div>
 
-          </div>
-
-        </div>
-
-
+    </div>
+        )}
+</div>
+</div>
         {/* Statistics */}
         <div className="mt-12 pt-6 border-t border-white/20">
 
