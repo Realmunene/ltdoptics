@@ -84,7 +84,7 @@ setShowPopup(false);
             alt="Blue Block Logo"
             className="
               h-9 
-              sm:h-9 
+              sm:h-8 
               lg:h-11 
               w-auto 
               object-contain 
@@ -98,8 +98,8 @@ setShowPopup(false);
             leading-none
             whitespace-nowrap
             animate-wave
-            text-4xl
-            sm:text-4xl
+            text-5xl
+            sm:text-5xl
             lg:text-6xl
           "
         >
