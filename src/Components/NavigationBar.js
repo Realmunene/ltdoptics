@@ -98,8 +98,8 @@ setShowPopup(false);
             leading-none
             whitespace-nowrap
             animate-wave
-            text-5xl
-            sm:text-5xl
+            text-4xl
+            sm:text-4xl
             lg:text-6xl
           "
         >
