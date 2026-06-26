@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import TopBar from "./Components/TopBar";
 import NavigationBar from "./Components/NavigationBar";
 import Footer from "./Components/Footer";
@@ -39,7 +39,14 @@ function App() {
 
   <main className="pt-28 md:pt-32">
     <Routes>
-      <Route path="/ltdoptics" element={<HomePage />} />
+      <Route
+      path="/ltdoptics"
+      element={<Navigate to="/" replace />}
+      />
+      <Route
+      path="*"
+      element={<Navigate to="/" replace />}
+      />
       <Route path="/" element={<HomePage />} />
       <Route path="/services" element={<Services />} />
       <Route path="/reading-glasses" element={<ReadingGlasses />} />

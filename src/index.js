@@ -1,24 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import reportWebVitals from './reportWebVitals';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+/*
+ * GitHub Pages SPA Redirect Support
+ * Restores the original URL after the custom 404.html redirects
+ * all requests back to the application root.
+ */
 const redirect = sessionStorage.getItem('redirect');
+
 if (redirect) {
   sessionStorage.removeItem('redirect');
   window.history.replaceState(null, '', redirect);
 }
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Performance monitoring
 reportWebVitals();
