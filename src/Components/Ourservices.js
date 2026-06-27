@@ -1,8 +1,8 @@
 import React from "react";
 
-import eyeCheckup from "./Assets/eyecheckup.jpg";
-import lenses from "./Assets/lens.jpg";
-import frames from "./Assets/framedesign.jpg";
+import eyeCheckup from "./Assets/eyecheckup.webp";
+import lenses from "./Assets/lens.webp";
+import frames from "./Assets/framedesign.webp";
 import { Link } from "react-router-dom";
 
 const Ourservices = () => {

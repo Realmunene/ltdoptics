@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const context = require.context(
   "./Assets/display",
   false,
-  /\.(png|jpe?g|svg)$/
+  /\.webp$/
 );
 
 const images = context

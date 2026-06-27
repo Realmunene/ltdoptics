@@ -3,7 +3,7 @@ import React from 'react';
 
 const Carousel = ({ 
   totalImages = 9, 
-  imageExtension = 'png',
+  imageExtension = 'webp',
   imageDirectory = '/Assets/images/'
 }) => {
   // Image names exactly as shown in your sample

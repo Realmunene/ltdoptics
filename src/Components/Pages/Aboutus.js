@@ -8,10 +8,10 @@ import {
   faBullseye,
 } from "@fortawesome/free-solid-svg-icons";
 
-import heroImage1 from "../Assets/image2/frontofice.png";
-import heroImage2 from "../Assets/images/femaleglasses.jpg";
-import heroImage3 from "../Assets/image2/blueblockshop.jpg";
-import heroImage4 from "../Assets/image2/blueblock12.jpg";
+import heroImage1 from "../Assets/image2/frontofice.webp";
+import heroImage2 from "../Assets/images/femaleglasses.webp";
+import heroImage3 from "../Assets/image2/blueblockshop.webp";
+import heroImage4 from "../Assets/image2/blueblock12.webp";
 
 const Aboutus = () => {
   const images = [

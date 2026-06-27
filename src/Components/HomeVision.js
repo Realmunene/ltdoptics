@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import menImage from "./Assets/images/pexels-cottonbro-6616123.jpg";
-import femaleImage from "./Assets/images/female glasses.jpg";
-import kidsImage from "./Assets/images/kidsglasses.jpg";
-import budgetImage from "./Assets/images/budgeted glass.jpg";
-import premiumImage from "./Assets/images/premium.jpg";
+import menImage from "./Assets/images/Men.webp";
+import femaleImage from "./Assets/images/femaleglasses.webp";
+import kidsImage from "./Assets/images/kidsglasses.webp";
+import budgetImage from "./Assets/images/budgeted.webp";
+import premiumImage from "./Assets/images/premium.webp";
 
 const sections = [
   {

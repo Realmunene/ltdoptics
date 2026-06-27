@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 // Top category images
-import eyeImg from "../Assets/eye-checkup.jpg";
-import allserv from "../Assets/image2/allserv.jpg";
-import eyeImg1 from "../Assets/image2/assessm.jpg";
-import eyeImg2 from "../Assets/image2/screen.jpg";
-import eyeImg3 from "../Assets/image2/assess.jpg";
-import eyecheck from "../Assets/image2/blue block inside.jpg";
-import lensImg from "../Assets/lenses.jpg";
-import lensImg1 from "../Assets/image2/4.jpg";
-import lensImg2 from "../Assets/image2/premiumcollection.jpeg";
-import frameImg from "../Assets/frames.jpg";
-import readingImg from "../Assets/reading-glasses.jpg";
-import readingImg1 from "../Assets/image2/1.jpg";
-import accessoryImg from "../Assets/image2/blueblock1.jpeg";
-import premium from "../Assets/image2/blueblockshop.jpg"
-import premium2 from "../Assets/image2/15.jpeg"
-import casing2 from "../Assets/image2/casing2.jpg"
-import casing1 from "../Assets/image2/casing1.jpg"
-import kitclean from "../Assets/image2/cleank1.jpg"
-import kitclean2 from "../Assets/image2/cleank2.jpg"
+import eyeImg from "../Assets/eyecheckup.webp";
+import allserv from "../Assets/image2/allserv.webp";
+import eyeImg1 from "../Assets/image2/assessm.webp";
+import eyeImg2 from "../Assets/image2/screen.webp";
+import eyeImg3 from "../Assets/image2/assess.webp";
+import eyecheck from "../Assets/image2/blue block inside.webp";
+import lensImg from "../Assets/lenses.webp";
+import lensImg1 from "../Assets/image2/4.webp";
+import lensImg2 from "../Assets/image2/premiumcollection.webp";
+import frameImg from "../Assets/frames.webp";
+import readingImg from "../Assets/reading-glasses.webp";
+import readingImg1 from "../Assets/image2/1.webp";
+import accessoryImg from "../Assets/image2/blueblock12.webp";
+import premium from "../Assets/image2/blueblockshop.webp"
+import premium2 from "../Assets/image2/15.webp"
+import casing2 from "../Assets/image2/casing2.webp"
+import casing1 from "../Assets/image2/casing1.webp"
+import kitclean from "../Assets/image2/cleank1.webp"
+import kitclean2 from "../Assets/image2/cleank2.webp"
 
 const Services = () => {
 

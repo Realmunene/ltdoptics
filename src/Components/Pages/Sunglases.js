@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
 // IMPORT IMAGES
-import img1 from "../Assets/image2/casing1.jpg";
-import img2 from "../Assets/image2/Sunglasses1.jpeg";
-import img3 from "../Assets/image2/Sunglasses3.jpeg";
-import img4 from "../Assets/image2/Sunglasses4.jpeg";
-import img5 from "../Assets/image2/Sunglasses6.jpeg";
-import img6 from "../Assets/image2/sunglases.jpeg";
+import img1 from "../Assets/image2/casing1.webp";
+import img2 from "../Assets/image2/Sunglasses1.webp";
+import img3 from "../Assets/image2/Sunglasses3.webp";
+import img4 from "../Assets/image2/Sunglasses4.webp";
+import img5 from "../Assets/image2/Sunglasses6.webp";
+import img6 from "../Assets/image2/sunglases.webp";
 
 // HERO IMAGE
-import heroImage from "../Assets/image2/sungla.jpg";
+import heroImage from "../Assets/image2/sungla.webp";
 
 const glassesData = [
   {
