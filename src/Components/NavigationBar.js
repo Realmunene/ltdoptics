@@ -82,8 +82,8 @@ setShowPopup(false);
           <img
             src={logo}
             alt="Blue Block Logo"
-            loading="lazy"
-            decoding="async"
+            width={819}
+            height={542}
             className="
               h-9 
               sm:h-8 
@@ -201,22 +201,39 @@ setShowPopup(false);
 
 
           {/* Mobile Hamburger / Close Button */}
-          <button
-            className="xl:hidden text-2xl text-sky-700"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            <FontAwesomeIcon
-              icon={isMobileMenuOpen ? faTimes : faBars}
-            />
-          </button>
-
+         <button
+  type="button"
+  aria-label={
+    isMobileMenuOpen
+      ? "Close navigation menu"
+      : "Open navigation menu"
+  }
+  aria-expanded={isMobileMenuOpen}
+  aria-controls="mobile-navigation"
+  title={
+    isMobileMenuOpen
+      ? "Close Menu"
+      : "Open Menu"
+  }
+  className="xl:hidden text-2xl text-sky-700"
+  onClick={() =>
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+>
+  <FontAwesomeIcon
+    icon={isMobileMenuOpen ? faTimes : faBars}
+    aria-hidden="true"
+  />
+</button>
         </div>
 
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
 
-          <div className="md:hidden border-t pb-4">
+          <div
+          id="mobile-navigation" 
+          className="md:hidden border-t pb-4">
 
             <Link
               to="/services"
@@ -300,11 +317,14 @@ setShowPopup(false);
         >
 
         <button
-        onClick={()=>setShowPopup(false)}
-        className="absolute top-4 right-5 text-3xl hover:rotate-90 transition"
-        >
-        ×
-        </button>
+  type="button"
+  aria-label="Close appointment dialog"
+  title="Close"
+  onClick={() => setShowPopup(false)}
+  className="absolute top-4 right-5 text-3xl hover:rotate-90 transition"
+>
+  ×
+</button>
         <h2 className="text-3xl font-black uppercase mb-8">
         Confirm Your
         <span className="text-sky-400">

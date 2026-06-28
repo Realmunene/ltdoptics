@@ -6,6 +6,7 @@
   src: url("./Components/Assets/fonts/Ostrich Black.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: optional;
 }
 
 .font-ostrich-black {

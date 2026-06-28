@@ -101,8 +101,9 @@ export default function CategoryCarousel() {
         <img
   src={item.image}
   alt=""
-  loading="lazy"
+  loading="eager"
   decoding="async"
+  fetchPriority="high"
   className="
     absolute
     inset-0
@@ -142,6 +143,9 @@ export default function CategoryCarousel() {
             key={item.image}
             src={item.image}
             alt={item.name}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
             className="
               max-h-[82%]
               max-w-[92%]
@@ -196,49 +200,61 @@ export default function CategoryCarousel() {
 
         {/* LEFT BUTTON */}
         <button
-          onClick={prev}
-          className="
-            absolute
-            left-4
-            top-1/2
-            -translate-y-1/2
-            h-12
-            w-12
-            rounded-full
-            bg-white/90
-            shadow-xl
-            backdrop-blur
-            transition
-            hover:scale-110
-            hover:bg-sky-500
-            hover:text-white
-          "
-        >
-          <ChevronLeft className="mx-auto h-6 w-6" />
-        </button>
+  type="button"
+  onClick={prev}
+  aria-label="Previous slide"
+  title="Previous slide"
+  className="
+    absolute
+    left-4
+    top-1/2
+    -translate-y-1/2
+    h-12
+    w-12
+    rounded-full
+    bg-white/90
+    shadow-xl
+    backdrop-blur
+    transition
+    hover:scale-110
+    hover:bg-sky-500
+    hover:text-white
+  "
+>
+  <ChevronLeft
+    className="mx-auto h-6 w-6"
+    aria-hidden="true"
+  />
+</button>
 
         {/* RIGHT BUTTON */}
         <button
-          onClick={next}
-          className="
-            absolute
-            right-4
-            top-1/2
-            -translate-y-1/2
-            h-12
-            w-12
-            rounded-full
-            bg-white/90
-            shadow-xl
-            backdrop-blur
-            transition
-            hover:scale-110
-            hover:bg-sky-500
-            hover:text-white
-          "
-        >
-          <ChevronRight className="mx-auto h-6 w-6" />
-        </button>
+  type="button"
+  onClick={next}
+  aria-label="Next slide"
+  title="Next slide"
+  className="
+    absolute
+    right-4
+    top-1/2
+    -translate-y-1/2
+    h-12
+    w-12
+    rounded-full
+    bg-white/90
+    shadow-xl
+    backdrop-blur
+    transition
+    hover:scale-110
+    hover:bg-sky-500
+    hover:text-white
+  "
+>
+  <ChevronRight
+    className="mx-auto h-6 w-6"
+    aria-hidden="true"
+  />
+</button>
 
       </div>
 

@@ -179,8 +179,6 @@ Thank you.
             <img
               src={section.image}
               alt={section.title}
-              loading="lazy"
-              decoding="async"
               className="h-[350px] w-full object-cover lg:h-full"
             />
           </div>
