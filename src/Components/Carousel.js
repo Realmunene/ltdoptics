@@ -34,6 +34,8 @@ const Carousel = ({
               <img 
                 src={getImagePath(index)} 
                 alt={imageNames[index]}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>

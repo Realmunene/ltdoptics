@@ -432,6 +432,8 @@ Thank you.
             <img
               src={item.image}
               alt={item.name}
+              loading="lazy"
+              decoding="async"
               className="
                 absolute inset-0
                 w-full h-full object-cover
@@ -647,6 +649,8 @@ Thank you.
           <img
             src={selectedService.image2}
             alt={selectedService.title}
+            loading="lazy"
+            decoding="async"
             className="
               w-full
               h-[250px]

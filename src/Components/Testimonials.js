@@ -48,6 +48,8 @@ const Testimonials = () => {
                 <img 
                   src={testimonial.image} 
                   alt={testimonial.name}
+                  loading="lazy"
+                  decoding="async"
                   className="w-12 h-12 rounded-full object-cover mr-4"
                 />
                 <div>

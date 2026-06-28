@@ -1,9 +1,9 @@
 // components/Home.js
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense, lazy } from "react";
 import bgVideo from "./Assets/blueblockoptician.mp4";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import CategoryCarousel from "./Categories";
+const CategoryCarousel = lazy(() => import("./Categories"));
 const Home = () => {
   // Kenya locations
   const [areas, setAreas] = useState({});
@@ -186,8 +186,16 @@ Thank you.
           {/* right side hero */}
           <div className="w-full lg:w-1/2 relative overflow-visible"> 
           <div className="relative z-10">
-            <CategoryCarousel />
-          </div>
+  <Suspense
+    fallback={
+      <div className="flex items-center justify-center h-[450px]">
+        <div className="w-10 h-10 border-4 border-sky-400 border-t-transparent rounded-full animate-spin" />
+      </div>
+    }
+  >
+    <CategoryCarousel />
+  </Suspense>
+</div>
           {/* appointment button */}
           {!showBookingForm && (
   <div className="flex justify-center mt-4">

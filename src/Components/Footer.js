@@ -6,7 +6,7 @@ import {
   faFacebook, faInstagram, faTwitter, faTiktok, faYoutube 
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faPhone, faLocationDot } from '@fortawesome/free-solid-svg-icons';
-import logo from "./Assets/blue block logo.png";
+import logo from "./Assets/blue block logo.webp";
 
 const Footer = () => {
   return (
@@ -20,6 +20,8 @@ const Footer = () => {
   <img
     src={logo}
     alt="Blue Block Logo"
+    loading="lazy"
+    decoding="async"
     className="h-8 sm:h-10 lg:h-12 w-auto object-contain rounded-lg flex-shrink-0"
   />
 

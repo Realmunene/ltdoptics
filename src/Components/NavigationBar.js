@@ -9,7 +9,7 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
-import logo from "./Assets/blue block logo.png";
+import logo from "./Assets/blue block logo.webp";
 
 const NavigationBar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -82,6 +82,8 @@ setShowPopup(false);
           <img
             src={logo}
             alt="Blue Block Logo"
+            loading="lazy"
+            decoding="async"
             className="
               h-9 
               sm:h-8 

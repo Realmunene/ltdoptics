@@ -1,24 +1,44 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+
 import TopBar from "./Components/TopBar";
 import NavigationBar from "./Components/NavigationBar";
 import Footer from "./Components/Footer";
 import WhatsAppChat from "./Components/WhatsAppChat";
-// Pages
-import Home from "./Components/Home";
-import HomeVision from "./Components/HomeVision";
-import Testimonials from "./Components/Testimonials";
-import ContactUs from "./Components/ContactUs";
-import GoogleMap from "./Components/GoogleMap";
-// Create these pages later
-import Services from "./Components/Pages/Services";
-import ReadingGlasses from "./Components/Pages/Readingg";
-import Sunglasses from "./Components/Pages/Sunglases";
-import EyewearAccessories from "./Components/Pages/Accessories";
-import DesignedFrames from "./Components/Pages/Designedfram";
-import About from "./Components/Pages/Aboutus";
-import Ourservices from "./Components/Ourservices";
-// Homepage layout
+
+// Lazy Loaded Components
+const Home = lazy(() => import("./Components/Home"));
+const HomeVision = lazy(() => import("./Components/HomeVision"));
+const Testimonials = lazy(() => import("./Components/Testimonials"));
+const ContactUs = lazy(() => import("./Components/ContactUs"));
+const GoogleMap = lazy(() => import("./Components/GoogleMap"));
+const Ourservices = lazy(() => import("./Components/Ourservices"));
+
+const Services = lazy(() => import("./Components/Pages/Services"));
+const ReadingGlasses = lazy(() => import("./Components/Pages/Readingg"));
+const Sunglasses = lazy(() => import("./Components/Pages/Sunglases"));
+const EyewearAccessories = lazy(() => import("./Components/Pages/Accessories"));
+const DesignedFrames = lazy(() => import("./Components/Pages/Designedfram"));
+const About = lazy(() => import("./Components/Pages/Aboutus"));
+
+/* Loading Screen */
+function PageLoader() {
+  return (
+    <div className="flex items-center justify-center min-h-[60vh]">
+      <div className="flex flex-col items-center gap-5">
+
+        <div className="w-12 h-12 border-4 border-sky-400 border-t-transparent rounded-full animate-spin" />
+
+        <p className="text-gray-600 font-semibold tracking-wide">
+          Loading...
+        </p>
+
+      </div>
+    </div>
+  );
+}
+
+/* Homepage */
 function HomePage() {
   return (
     <>
@@ -31,35 +51,71 @@ function HomePage() {
     </>
   );
 }
+
 function App() {
   return (
     <div className="min-h-screen bg-gray-100">
-  <TopBar />
-  <NavigationBar />
 
-  <main className="pt-28 md:pt-32">
-    <Routes>
-      <Route
-      path="/ltdoptics"
-      element={<Navigate to="/" replace />}
-      />
-      <Route
-      path="*"
-      element={<Navigate to="/" replace />}
-      />
-      <Route path="/" element={<HomePage />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/reading-glasses" element={<ReadingGlasses />} />
-      <Route path="/sunglasses" element={<Sunglasses />} />
-      <Route path="/eyewear-accessories" element={<EyewearAccessories />} />
-      <Route path="/designed-frames" element={<DesignedFrames />} />
-      <Route path="/about" element={<About />} />
-    </Routes>
-  </main>
+      <TopBar />
 
-  <WhatsAppChat />
-  <Footer />
-</div>
+      <NavigationBar />
+
+      <main className="pt-28 md:pt-32">
+
+        <Suspense fallback={<PageLoader />}>
+
+          <Routes>
+
+            <Route
+              path="/ltdoptics"
+              element={<Navigate to="/" replace />}
+            />
+
+            <Route
+              path="*"
+              element={<Navigate to="/" replace />}
+            />
+
+            <Route path="/" element={<HomePage />} />
+
+            <Route path="/services" element={<Services />} />
+
+            <Route
+              path="/reading-glasses"
+              element={<ReadingGlasses />}
+            />
+
+            <Route
+              path="/sunglasses"
+              element={<Sunglasses />}
+            />
+
+            <Route
+              path="/eyewear-accessories"
+              element={<EyewearAccessories />}
+            />
+
+            <Route
+              path="/designed-frames"
+              element={<DesignedFrames />}
+            />
+
+            <Route
+              path="/about"
+              element={<About />}
+            />
+
+          </Routes>
+
+        </Suspense>
+
+      </main>
+
+      <WhatsAppChat />
+
+      <Footer />
+
+    </div>
   );
 }
 

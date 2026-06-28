@@ -101,6 +101,8 @@ export default function CategoryCarousel() {
         <img
   src={item.image}
   alt=""
+  loading="lazy"
+  decoding="async"
   className="
     absolute
     inset-0

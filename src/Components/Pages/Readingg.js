@@ -199,6 +199,8 @@ Kindly provide me with more information.
                   <img
                     src={glass.images[0]}
                     alt={glass.name}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full min-h-[280px] object-cover rounded-xl"
                   />
                 </div>
